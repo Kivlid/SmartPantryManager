@@ -11,17 +11,24 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private DatabaseManager databaseManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        databaseManager = new DatabaseManager(this);
+        databaseManager.open();
 
         findViewById(R.id.buttonAddIngredient).setOnClickListener(v -> {
             Intent intent = new Intent(
                     MainActivity.this,
                     AddEditIngredientActivity.class
             );
+
             startActivity(intent);
         });
 
@@ -30,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this,
                     SuggestedRecipesActivity.class
             );
+
             startActivity(intent);
         });
 
@@ -38,12 +46,14 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this,
                     SettingsActivity.class
             );
+
             startActivity(intent);
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main),
                 (v, insets) -> {
+
                     Insets systemBars = insets.getInsets(
                             WindowInsetsCompat.Type.systemBars()
                     );
@@ -58,5 +68,14 @@ public class MainActivity extends AppCompatActivity {
                     return insets;
                 }
         );
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (databaseManager != null) {
+            databaseManager.close();
+        }
+
+        super.onDestroy();
     }
 }
