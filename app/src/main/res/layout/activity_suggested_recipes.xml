@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pantry List"
+        android:text="Suggested Recipes"
         android:textSize="28sp"
         android:textStyle="bold"
         android:paddingBottom="16dp" />
@@ -17,28 +17,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your pantry items will appear here."
+        android:text="Recipes that match your available pantry ingredients will appear here."
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/buttonAddIngredient"
+        android:id="@+id/buttonRecipeDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Ingredient"
+        android:text="View Recipe Detail"
         android:layout_marginTop="20dp" />
-
-    <Button
-        android:id="@+id/buttonSuggestedRecipes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Suggested Recipes"
-        android:layout_marginTop="12dp" />
-
-    <Button
-        android:id="@+id/buttonSettings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        android:layout_marginTop="12dp" />
 
 </LinearLayout>

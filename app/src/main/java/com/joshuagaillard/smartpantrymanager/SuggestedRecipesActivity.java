@@ -9,34 +9,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class SuggestedRecipesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_suggested_recipes);
 
-        findViewById(R.id.buttonAddIngredient).setOnClickListener(v -> {
+        findViewById(R.id.buttonRecipeDetail).setOnClickListener(v -> {
             Intent intent = new Intent(
-                    MainActivity.this,
-                    AddEditIngredientActivity.class
-            );
-            startActivity(intent);
-        });
-
-        findViewById(R.id.buttonSuggestedRecipes).setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    MainActivity.this,
-                    SuggestedRecipesActivity.class
-            );
-            startActivity(intent);
-        });
-
-        findViewById(R.id.buttonSettings).setOnClickListener(v -> {
-            Intent intent = new Intent(
-                    MainActivity.this,
-                    SettingsActivity.class
+                    SuggestedRecipesActivity.this,
+                    RecipeDetailActivity.class
             );
             startActivity(intent);
         });
