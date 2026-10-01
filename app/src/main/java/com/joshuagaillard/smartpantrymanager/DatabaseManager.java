@@ -143,6 +143,34 @@ public class DatabaseManager {
         );
     }
 
+    public Cursor getAllRecipes() {
+
+        return database.query(
+                DatabaseHelper.TABLE_RECIPES,
+                null,
+                null,
+                null,
+                null,
+                null,
+                DatabaseHelper.COLUMN_RECIPE_NAME + " ASC"
+        );
+    }
+
+    public Cursor getRecipeIngredients(long recipeId) {
+
+        return database.query(
+                DatabaseHelper.TABLE_RECIPE_INGREDIENTS,
+                null,
+                DatabaseHelper.COLUMN_RECIPE_INGREDIENT_RECIPE_ID + " = ?",
+                new String[]{
+                        String.valueOf(recipeId)
+                },
+                null,
+                null,
+                DatabaseHelper.COLUMN_RECIPE_INGREDIENT_ID + " ASC"
+        );
+    }
+
     public void close() {
         databaseHelper.close();
         database = null;
