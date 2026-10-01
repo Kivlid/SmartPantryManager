@@ -33,8 +33,16 @@
         android:id="@+id/editTextUnit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Unit"
+        android:hint="Unit (e.g. kg, g, L, ml, pieces)"
         android:inputType="text"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/editTextExpiryDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Expiry date (optional, YYYY-MM-DD)"
+        android:inputType="date"
         android:layout_marginTop="12dp" />
 
     <Button
