@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Suggested Recipes"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:paddingBottom="16dp" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <TextView
-        android:id="@+id/textSuggestionStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Checking your pantry..."
-        android:textSize="16sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="Suggested Recipes"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/buttonRecipeDetail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View Recipe Detail"
-        android:layout_marginTop="20dp" />
+        <TextView
+            android:id="@+id/textSuggestionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checking your pantry..."
+            android:textSize="16sp" />
 
-</LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutRecipeSuggestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+</ScrollView>

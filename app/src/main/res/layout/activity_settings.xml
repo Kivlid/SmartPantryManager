@@ -12,12 +12,28 @@
         android:text="Settings"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:paddingBottom="16dp" />
+        android:paddingBottom="24dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile and application settings will appear here."
+        android:text="Expiry Alerts"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Choose whether Smart Pantry Manager should enable expiry alert reminders."
+        android:textSize="15sp" />
+
+    <Switch
+        android:id="@+id/switchExpiryAlerts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Enable expiry alerts"
         android:textSize="16sp" />
 
 </LinearLayout>
